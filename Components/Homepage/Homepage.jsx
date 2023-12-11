@@ -1,15 +1,13 @@
 import React from "react";
-import { View, Image, Button, StyleSheet } from "react-native";
+import { View, Image, TouchableOpacity, StyleSheet } from "react-native";
 
 export default function Homepage({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image style={styles.logo} source={require("../../assets/Jac.png")} />
-      <Button
-        style={styles.button}
-        title="Go next"
-        onPress={() => navigation.navigate("SecondPage")}
-      />
+      <TouchableOpacity
+        onPress={() => navigation.navigate("SecondPage")}>
+        <Image style={styles.logo} source={require("../../assets/Jac.png")} />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -17,18 +15,15 @@ export default function Homepage({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor:"#fff"
   },
   logo: {
-    width: 350,
-    height: 350,
+    width: 150,
+    height: 150,
     borderRadius: 100,
-    borderColor: 'orange',
-    marginBottom: 50,
-  },
-  button: {
-    width: 250,
-    color: 'green',
-  },
+    borderColor: "#F29100",
+    marginBottom: 20,
+  }
 });

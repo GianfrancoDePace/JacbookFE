@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
         padding: 16,
         justifyContent: 'flex-start',
         alignItems: 'center',
+        backgroundColor: '#fff',
     },
     logo: {
         width: 35,
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 8,
     },
     button: {
+        width:"100%",
         backgroundColor: 'orange',
         paddingVertical: 10,
         paddingHorizontal: 20,

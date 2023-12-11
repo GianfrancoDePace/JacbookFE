@@ -21,14 +21,12 @@ const SecondPage = ({ navigation }) => {
                 <Text style={styles.text1}>Noi non vediamo l'ora </Text>
                 <TouchableOpacity
                     style={styles.opacity}
-                    onPress={() => navigation.navigate("Login")}
-                >
+                    onPress={() => navigation.navigate("Login")}>
                     <Text style={styles.buttonText}>Sono un Talento</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.opacity2}
-                    onPress={() => navigation.navigate("Register")}
-                >
+                    onPress={() => navigation.navigate("Register")}>
                     <Text style={styles.buttonText}>Sono un ex-talento</Text>
                 </TouchableOpacity>
             </ScrollView>
@@ -42,7 +40,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
     },
     scrollContainer: {
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
         padding: 20,
     },

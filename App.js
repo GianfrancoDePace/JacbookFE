@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-//import Homepage from "./Components/Homepage/Homepage.jsx";
+import Homepage from "./Components/Homepage/Homepage.jsx";
 import SecondPage from "./Components/SecondPage/SecondPage.jsx";
 import LoginPage from "./Components/LoginPage/LoginPage.jsx";
 import Register from "./Components/RegisterPage/RegisterPage.jsx";
@@ -15,6 +15,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="Home" component={Homepage} />
         <Stack.Screen name="SecondPage" component={SecondPage} />
         <Stack.Screen name="Login" component={LoginPage} />
         <Stack.Screen name="Register" component={Register} />
