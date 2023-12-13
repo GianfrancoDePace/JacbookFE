@@ -27,7 +27,7 @@ const SecondPage = ({ navigation }) => {
                 <TouchableOpacity
                     style={styles.opacity2}
                     onPress={() => navigation.navigate("Register")}>
-                    <Text style={styles.buttonText}>Sono un ex-talento</Text>
+                    <Text style={styles.buttonText}>Sono un ex-Talento</Text>
                 </TouchableOpacity>
             </ScrollView>
         </View>

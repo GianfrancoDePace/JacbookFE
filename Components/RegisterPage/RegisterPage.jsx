@@ -27,7 +27,7 @@ const Register = ({navigation}) => {
             <TextInput style={styles.input} placeholder="Inserisci password" secureTextEntry />
             <Text style={styles.label}>Conferma Password</Text>
             <TextInput style={styles.input} placeholder="Conferma password" secureTextEntry />
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("InAttesa")}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Utente")}>
                 <Text style={styles.buttonText}>Registrati</Text>
             </TouchableOpacity>
         </ScrollView>

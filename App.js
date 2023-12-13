@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import { NavigationContainer} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Homepage from "./Components/Homepage/Homepage.jsx";
@@ -8,6 +8,7 @@ import LoginPage from "./Components/LoginPage/LoginPage.jsx";
 import Register from "./Components/RegisterPage/RegisterPage.jsx";
 import InAttesa from "./Components/InApprovazione/Inattesa.jsx";
 import PwDimenticata from "./Components/LoginPage/PwDimenticata/PwDimenticata.jsx";
+import Profile from "./Components/ProfiloUtente/Utente.jsx";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ function App() {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="InAttesa" component={InAttesa} />
         <Stack.Screen name="PwDimenticata" component={PwDimenticata} />
+        <Stack.Screen name="Utente" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
