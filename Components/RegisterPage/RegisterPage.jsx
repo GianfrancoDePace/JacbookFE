@@ -21,10 +21,9 @@ const Register = ({ navigation }) => {
     };  
 
     const handleRegistration=() => {
-        
-    }
 
-    return (
+    }
+  return (
         <ScrollView contentContainerStyle={styles.container}>
             <Image style={styles.logo} source={require("../../assets/Jac.png")} />
             <View style={styles.nameContainer}>
