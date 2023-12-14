@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, View, Text, TextInput, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 
-const Register = ({navigation}) => {
+const Register = ({ navigation }) => {
+    const [formData, setFormData] = useState({
+        nome: "",
+        cognome: "",
+        dataNascita: "",
+        emailP: "",
+        emailI: "",
+        corso: "",
+        password: "",
+        confermaPassword: ""
+    })
+
+    const handleChange = () => {
+        setFormData((prevData) => ({
+            ...prevData,
+            [key]: value,
+        }));
+    };  
+
+    const handleRegistration=() => {
+        
+    }
+
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Image style={styles.logo} source={require("../../assets/Jac.png")} />
@@ -72,7 +94,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 8,
     },
     button: {
-        width:"100%",
+        width: "100%",
         backgroundColor: 'orange',
         paddingVertical: 10,
         paddingHorizontal: 20,

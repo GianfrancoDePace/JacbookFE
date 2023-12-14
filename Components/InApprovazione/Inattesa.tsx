@@ -2,7 +2,7 @@ import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 
-export default InAttesa = () => {
+const InAttesa = () => {
     return (
         <View style={styles.container}>
             <Image source={require("../../assets/Network.png")} />
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom:50
+        marginBottom: 50
     },
     text1: {
         alignSelf: "center",
@@ -25,3 +25,5 @@ const styles = StyleSheet.create({
         marginTop: 50,
     },
 })
+
+export default InAttesa;
