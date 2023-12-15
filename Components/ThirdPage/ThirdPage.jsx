@@ -2,10 +2,10 @@ import React from "react"
 import { Image, Text, StyleSheet, TouchableOpacity, View } from "react-native"
 
 
-const thirdPage = ({navigation}) => {
+const ThirdPage = ({navigation}) => {
 
     return (
-        <View>
+        <View style={styles.container}>
             <Image style={styles.image} source={require("../../assets/Network.png")} />
 
             <Text style={styles.text1}>Noi non vediamo l'ora </Text>
@@ -17,21 +17,26 @@ const thirdPage = ({navigation}) => {
             <TouchableOpacity
                 style={styles.opacity2}
                 onPress={() => navigation.navigate("Register")}>
-                <Text style={styles.buttonText}>Sono un ex-Talento</Text>
+                <Text style={styles.buttonText2}>Sono un ex-Talento</Text>
             </TouchableOpacity>
         </View>
     )
 }
 
-export default thirdPage;
+export default ThirdPage;
 
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#fff",
+        padding: 20,
+      },
     image: {
-        width: "100%",
-        height: undefined,
-        aspectRatio: 1,
-        marginBottom: 20,
+        marginBottom: 200,
         resizeMode: "contain",
     },
     text1: {
@@ -59,7 +64,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     buttonText: {
-        color: "black",
+        color: "white",
+        fontSize: 16,
+    },
+    buttonText2: {
+        color: "grey",
         fontSize: 16,
     }
+
 })

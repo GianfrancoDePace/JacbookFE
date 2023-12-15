@@ -6,19 +6,19 @@ export default function Homepage() {
   const navigation = useNavigation();
 
   const startTimeout = () => {
-    return setTimeout(() => {
+    setTimeout(() => {
       navigation.navigate("SecondPage");
     }, 1000);
   };
 
   useEffect(() => {
-    const timeout = startTimeout();
+    timeout = startTimeout();
     return () => clearTimeout(timeout);
   }, [navigation]);
 
   useFocusEffect(
     useCallback(() => {
-      const timeout = startTimeout();
+      startTimeout();
       return () => clearTimeout(timeout);
     }, [navigation])
   );

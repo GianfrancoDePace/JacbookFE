@@ -1,7 +1,19 @@
-import React from "react";
-import { Button,Text, Image, StyleSheet, View } from "react-native";
+import React, { useState } from "react";
+import { Button, Text, Image, StyleSheet, View } from "react-native";
+
+
+
 
 const SecondPage = ({ navigation }) => {
+  const [fillX, setFillX] = useState(0);
+
+  const handleView = (event) => {
+    const offsetX = event.nativeEvent.contentOffset.x;
+    const width = event.nativeEvent.contentSize.width - event.nativeEvent.layoutMeasurement.width;
+    const fillPercentage = (offsetX / width) * 100;
+    setFillX(fillPercentage);
+  }
+
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={require("../../assets/Jac.png")} />
@@ -16,9 +28,9 @@ const SecondPage = ({ navigation }) => {
       </Text>
       <View style={styles.horizontalLine}></View>
       <Text style={styles.text1}>Pronto ad entrare in questo nuovo mondo? </Text>
-      <View style={styles.horizontalLine}></View>
+      <View style={[styles.horizontalLine, { width: `${fillX}%` }]}></View>
 
-      <Button title={"prova"}onPress={()=>navigation.navigate("ThirdPage")}/>
+      <Button title={"prova"} onPress={() => navigation.navigate("ThirdPage")} />
     </View>
   );
 };
