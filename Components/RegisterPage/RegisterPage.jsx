@@ -59,20 +59,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 16,
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
     },
     logo: {
-        width: 35,
-        height: 30,
-        marginBottom: 16,
+        width: 100,
+        height: 100,
     },
     nameContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '100%',
-        marginBottom: 16,
     },
     inputContainer: {
         flex: 1,

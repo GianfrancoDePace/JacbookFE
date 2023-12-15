@@ -1,26 +1,36 @@
-import React, { useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { View, Image, StyleSheet } from "react-native";
+import React, { useEffect, useCallback } from "react";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 export default function Homepage() {
   const navigation = useNavigation();
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
+  const startTimeout = () => {
+    return setTimeout(() => {
       navigation.navigate("SecondPage");
-    }, 2000);
+    }, 1000);
+  };
 
-
+  useEffect(() => {
+    const timeout = startTimeout();
     return () => clearTimeout(timeout);
   }, [navigation]);
 
+  useFocusEffect(
+    useCallback(() => {
+      const timeout = startTimeout();
+      return () => clearTimeout(timeout);
+    }, [navigation])
+  );
+
   return (
     <View style={styles.container}>
-      <Image style={styles.logo} source={require("../../assets/Jac.png")} />
+      <TouchableOpacity onPress={() => navigation.navigate("SecondPage")}>
+        <Image style={styles.logo} source={require("../../assets/Jac.png")} />
+      </TouchableOpacity>
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {

@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Homepage from "./Components/Homepage/Homepage.jsx";
 import SecondPage from "./Components/SecondPage/SecondPage.jsx";
+import ThirdPage from "./Components/ThirdPage/ThirdPage.jsx";
 import LoginPage from "./Components/LoginPage/LoginPage.jsx";
 import Register from "./Components/RegisterPage/RegisterPage.jsx";
 import InAttesa from "./Components/InApprovazione/Inattesa.jsx";
@@ -21,6 +22,7 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Homepage} />
           <Stack.Screen name="SecondPage" component={SecondPage} />
+          <Stack.Screen name="ThirdPage" component={ThirdPage} />
           <Stack.Screen name="Login" component={LoginPage} />
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="InAttesa" component={InAttesa} />
