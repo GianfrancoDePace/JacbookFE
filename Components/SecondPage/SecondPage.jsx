@@ -1,19 +1,13 @@
-import React, { useState } from "react";
-import { Button, Text, Image, StyleSheet, View } from "react-native";
-
-
-
+import React from "react";
+import { Text, Image, StyleSheet, View } from "react-native";
+import SwipeButton from "./Swipe/SwipeButton";
 
 const SecondPage = ({ navigation }) => {
-  const [fillX, setFillX] = useState(0);
-
-  const handleView = (event) => {
-    const offsetX = event.nativeEvent.contentOffset.x;
-    const width = event.nativeEvent.contentSize.width - event.nativeEvent.layoutMeasurement.width;
-    const fillPercentage = (offsetX / width) * 100;
-    setFillX(fillPercentage);
+  const handleToggle = (isToggled) => {
+    if (isToggled) {
+      navigation.navigate("ThirdPage");
+    }
   }
-
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={require("../../assets/Jac.png")} />
@@ -28,9 +22,7 @@ const SecondPage = ({ navigation }) => {
       </Text>
       <View style={styles.horizontalLine}></View>
       <Text style={styles.text1}>Pronto ad entrare in questo nuovo mondo? </Text>
-      <View style={[styles.horizontalLine, { width: `${fillX}%` }]}></View>
-
-      <Button title={"prova"} onPress={() => navigation.navigate("ThirdPage")} />
+      <SwipeButton onToggle={handleToggle} navigation={navigation} />
     </View>
   );
 };
@@ -70,6 +62,14 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: "center",
   },
+  swipeButton: {
+    padding: 10,
+    borderRadius: 5,
+    alignSelf: 'flex-start',
+  },
+  textButton: {
+    color: "white",
+  }
 });
 
 export default SecondPage;
